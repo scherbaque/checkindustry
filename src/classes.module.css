@@ -1,0 +1,196 @@
+.footer {
+    height: 50px;
+    width: 100%;
+    background: #4a4a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    height: 70px;
+    width: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 60px;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright {
+    font-size: 14px;
+    font-weight: 200;
+    color: #bababa;
+    text-align: center;
+}
+
+.headerTitle {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #313131;
+    text-align: center;
+}
+
+.mainTitle {
+    font-size: 28px;
+    color: #313131;
+    text-align: center;
+}
+
+.text {
+    font-size: 14px;
+    color: #313131;
+    /* text-align: center; */
+}
+
+.optionText {
+    color: #313131;
+    font-size: 16px;
+}
+
+.redButton {
+    composes: flex;
+    width: 180px;
+    height: 48px;
+    background: #c62938;
+    border-radius: 4px;
+}
+
+.buttonText {
+    font-size: 18px;
+    color: white;
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.block {
+    composes: flex;
+    width: 480px;
+    flex-direction: column;
+}
+
+.row {
+    composes: flex;
+}
+
+.half {
+    composes: flex;
+    flex: 1;
+    height: 100%;
+}
+
+.home {
+    composes: flex;
+    height: 100%;
+}
+
+.link {
+    color: #696969;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    border: solid 1px #ddd;
+    text-align: center;
+    border-radius: 4px;
+    width: 88px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: #999;
+}
+
+.login {
+    composes: home;
+}
+
+.loginBlock {
+    composes: flex;
+    width: 420px;
+    height: 300px;
+    padding: 85px;
+    box-sizing: border-box;
+    flex-direction: column;
+    background: #ffffff;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1),
+        0px 16px 32px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+}
+
+.loginBox {
+    composes: flex;
+    margin-top: 10px;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.loginTitle {
+    color: white;
+    font-size: 18px;
+    top: 0px;
+    right: 10px;
+    position: absolute;
+}
+
+.matchCol {
+    composes: flex;
+    flex-direction: column;
+    width: 440px;
+}
+
+.match {
+    composes: block;
+    width: 580px;
+    margin: auto;
+}
+
+.doesItMatch {
+    color: #313131;
+    font-size: 18px;
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+.switchRow {
+    composes: row;
+    box-sizing: border-box;
+    width: 400px;
+    justify-content: space-between;
+}
+
+.switchTitle {
+    color: #313131;
+    font-size: 18px;
+}
+
+.uncheckedIcon {
+    font-size: 14px;
+    color: white;
+    bottom: -7px;
+    position: absolute;
+}
+
+.checkedIcon {
+    composes: uncheckedIcon;
+    left: 20px;
+}
