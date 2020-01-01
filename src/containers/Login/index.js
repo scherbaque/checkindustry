@@ -2,10 +2,11 @@ import React from "react";
 import classes from "../../classes.module.css";
 import {ReactComponent as LinkedinIcon} from "../../assets/linkedin.svg";
 import {ReactComponent as LinkedinLogo} from "../../assets/in.svg";
+import Auth from "../../api/auth";
 
 const LinkedinInput = () => {
     return (
-        <div className={classes.loginBox}>
+        <div onClick={Auth} className={classes.loginBox}>
             <LinkedinIcon
                 style={{position: "relative"}}
                 height={56}

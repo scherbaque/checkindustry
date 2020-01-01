@@ -8,13 +8,13 @@
 }
 
 .header {
-    height: 70px;
+    height: 60px;
     width: 100%;
     background: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 60px;
+    padding: 5px 80px;
     box-sizing: border-box;
 }
 
@@ -58,6 +58,7 @@
 .redButton {
     composes: flex;
     width: 180px;
+    cursor: pointer;
     height: 48px;
     background: #c62938;
     border-radius: 4px;
@@ -86,6 +87,7 @@
 
 .row {
     composes: flex;
+    height: 65px;
 }
 
 .half {
@@ -96,7 +98,9 @@
 
 .home {
     composes: flex;
-    height: 100%;
+    width: 95%;
+    flex-direction: row;
+    margin: auto;
 }
 
 .link {
@@ -105,15 +109,42 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 36px;
+    height: 32px;
     border: solid 1px #ddd;
     text-align: center;
     border-radius: 4px;
-    width: 88px;
-    margin: 20px;
+    width: 86px;
+    margin: 0 5px;
     cursor: pointer;
 }
 
+.selectContainer {
+    composes: flex;
+    margin: 30px 0;
+}
+
+.industryList {
+    composes: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.industry {
+    /* color: yellow; */
+    margin: 0;
+    cursor: pointer;
+    padding: 0;
+    color: #AFBAA1;
+    font-size: 12px;
+}
+
+.industrySelected {
+    font-size: 20px;
+    margin: 16px 0;
+}
 .link:hover {
     color: #999;
 }

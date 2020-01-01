@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import classes from "../../classes.module.css";
 import MySwitch from "../../components/MySwitch";
 // import MySelect from '../../components/MySelect'
@@ -11,8 +11,14 @@ const Button = () => {
     );
 };
 
-const Match = () => {
-    const [a, setA] = useState(false);
+const Match = props => {
+    const [matches, setMatches] = useState([]);
+    const [bools, setBools] = useState([false, false, false, false, false]);
+
+    useEffect(() => {
+        setMatches(props.location.state.matches.sort((a, b) => a.score < b.score));
+    }, [props.location.state]);
+
     return (
         <div className={classes.match}>
             <h1 className={classes.mainTitle}>
@@ -22,16 +28,21 @@ const Match = () => {
                 <h5 className={classes.doesItMatch}> Does It Match? </h5>
 
                 <div className={classes.matchCol}>
-                    <MySwitch
-                        title="Pharmacevtical"
-                        active={a}
-                        setActive={setA}
-                    ></MySwitch>
-                    <MySwitch
-                        title="Mother"
-                        active={a}
-                        setActive={setA}
-                    ></MySwitch>
+                    {matches.map((e, index) => {
+                        return (
+                            <MySwitch
+                                title={e.title}
+                                active={bools[index]}
+                                setActive={newBool =>
+                                    setBools(
+                                        bools.map((bool, i) =>
+                                            i === index ? newBool : bool
+                                        )
+                                    )
+                                }
+                            ></MySwitch>
+                        );
+                    })}
                 </div>
             </div>
         </div>
