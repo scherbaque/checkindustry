@@ -3,6 +3,11 @@ import classes from "../../classes.module.css";
 import MySelect from "../../components/MySelect";
 import IndustryList from "../../components/IndustryList";
 import {path} from "../../api/constants";
+import {bio} from "../../industries";
+
+const data = bio;
+
+
 const Button = ({onClick}) => {
     return (
         <div onClick={onClick} className={classes.redButton}>
@@ -13,7 +18,7 @@ const Button = ({onClick}) => {
 
 const Home = ({history}) => {
     const [industry, setIndustry] = useState(null);
-    const [sub, setSub] = useState('Biotechnology');
+    const [sub, setSub] = useState(null);
 
     const sendRequest = token => {
         const subIndustry = encodeURI(sub);
@@ -43,7 +48,15 @@ const Home = ({history}) => {
         if (token) {
             sendRequest(token);
         }
+        else {
+            history.push('/login')
+        }
     };
+
+    const handleChangeSelect = (node) => {
+        console.log("none = ", node)
+        setSub(node.label);
+    }
 
     return (
         <div className={classes.home}>
@@ -59,7 +72,7 @@ const Home = ({history}) => {
                 <div className={classes.block}>
                     <h1 className={classes.titleMain}>Pick Your Industry</h1>
                     <div className={classes.selectContainer}>
-                        <MySelect sub={sub} setSub={setSub}></MySelect>
+                        <MySelect onChange={handleChangeSelect} data={data} setCallback={setSub}></MySelect>
                     </div>
                     <Button onClick={handleRequest} />
                 </div>

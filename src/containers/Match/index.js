@@ -82,6 +82,7 @@ const Match = props => {
                     {matches.map((e, index) => {
                         return (
                             <MySwitch
+                                setPreference={index === 0 ? setPreference : null}
                                 title={e.title}
                                 active={bools[index]}
                                 setActive={newBool =>
@@ -95,7 +96,7 @@ const Match = props => {
                         );
                     })}
                 </div>
-                <Button onClick={setPreference} />
+                {/* <Button onClick={setPreference} /> */}
             </div>
         </div>
     );
