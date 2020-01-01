@@ -64,6 +64,11 @@
     border-radius: 4px;
 }
 
+.blueButton {
+    composes: redButton;
+    background: #29c6b8;
+}
+
 .buttonText {
     font-size: 18px;
     color: white;
@@ -186,6 +191,7 @@
 .matchCol {
     composes: flex;
     flex-direction: column;
+    justify-content: flex-start;
     width: 440px;
 }
 
@@ -197,7 +203,8 @@
 
 .doesItMatch {
     color: #313131;
-    font-size: 18px;
+    font-size: 16px;
+    margin: 10px 0 12px 0;
     justify-self: flex-end;
     align-self: flex-end;
 }
