@@ -9,6 +9,7 @@
 
 .header {
     height: 60px;
+    margin: 0px;
     width: 100%;
     background: white;
     display: flex;
@@ -104,8 +105,15 @@
 .home {
     composes: flex;
     width: 95%;
+    height: 100%;
     flex-direction: row;
-    margin: auto;
+    margin: 10px auto;
+}
+
+.pickBlock {
+    composes: block;
+    align-self: flex-start;
+    margin-top: 40px;
 }
 
 .link {
@@ -130,11 +138,14 @@
 
 .industryList {
     composes: flex;
+    flex-wrap: wrap;
+    height: 110px;
     flex-direction: column;
     margin: 20px 0;
     justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
+    align-items: center;
+    text-align: center;
+    width: 80%;
 }
 
 .industry {
@@ -144,11 +155,14 @@
     padding: 0;
     color: #AFBAA1;
     font-size: 12px;
+    text-align: center;
 }
 
 .industrySelected {
-    font-size: 20px;
-    margin: 16px 0;
+    composes: industry;
+    color: pink;
+    /* font-size: 20px; */
+    /* margin: 16px 0; */
 }
 .link:hover {
     color: #999;
