@@ -1,34 +1,42 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import classes from "../classes.module.css";
 import {withRouter} from "react-router-dom";
 
-const MyLink = withRouter(({label, route, history}) => {
+const MyLink = withRouter(({label, route, history, onClick}) => {
     return (
-        <div onClick={() => history.push(route)} className={classes.link}>
+        <div
+            onClick={onClick ? onClick : () => history.push(route)}
+            className={classes.link}
+        >
             {label}
         </div>
     );
 });
 
-const links = [
-    {
-        label: "Home",
-        route: "/"
-    },
-    {
-        label: "Login",
-        route: "/login"
-    },
-]
-
 const Header = () => {
+    const [token, setToken] = useState(null);
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        setToken(token);
+    });
+
     return (
         <header className={classes.header}>
             <h2 className={classes.headerTitle}>Check your industry</h2>
             <div className={classes.row}>
-                {links.map((e, index) => (
-                    <MyLink key={index} label={e.label} route={e.route} />
-                ))}
+                <MyLink label={"Home"} route={"/"} />
+                {!token ? (
+                    <MyLink label={"Login"} route={"/login"} />
+                ) : (
+                    <MyLink
+                        label={"Logout"}
+                        onClick={() => {
+                            localStorage.removeItem("token");
+                            setToken(null);
+                        }}
+                    />
+                )}
             </div>
         </header>
     );
