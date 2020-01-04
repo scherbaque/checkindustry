@@ -2,6 +2,10 @@
     text-decoration: none !important;
 }
 
+.dropdown-content * {
+    cursor: pointer !important;
+}
+
 .dropdown-content {
     max-height: 300px;
     overflow-y: auto;

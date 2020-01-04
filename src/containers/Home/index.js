@@ -5,24 +5,77 @@ import IndustryList from "../../components/IndustryList";
 import {path} from "../../api/constants";
 import * as arrays from "../../industries";
 
+const setEnabled = arr => {
+    return arr.map(e => ({...e, disabled: false}));
+};
+
 const data = [
-    // { #bug here
-    //    label: "Bio & Nano Technology",
-    //    value: 'Bio & Nano Technology',
-    //    disabled: true,
-    //    children:  [...arrays.bio]
-    // }
-    ...arrays.bio,
-    ...arrays.assets,
-    ...arrays.bio,
-    ...arrays.business,
-    ...arrays.family,
-    ...arrays.it,
-    ...arrays.legal,
-    ...arrays.local,
-    ...arrays.media,
-    ...arrays.security,
-    ...arrays.social
+    {
+        label: "Bio & Nano Technology",
+        value: "Bio & Nano Technology",
+        disabled: true,
+        children: [...setEnabled(arrays.bio)]
+    },
+    {
+        label: "Business",
+        value: "Business",
+        disabled: true,
+        children: [...setEnabled(arrays.business)]
+    },
+    {
+        label: "Social",
+        value: "Social",
+        disabled: true,
+        children: [...setEnabled(arrays.social)]
+    },
+    {
+        label: "Family & Home",
+        value: "Family & Home",
+        disabled: true,
+        children: [...setEnabled(arrays.family)]
+    },
+    {
+        label: "Assets & Finance",
+        value: "Assets & Finance",
+        disabled: true,
+        children: [...setEnabled(arrays.assets)]
+    },
+    {
+        label: "Information Technology",
+        value: "Information Technology",
+        disabled: true,
+        children: [...setEnabled(arrays.it)]
+    },
+    {
+        label: "Legal",
+        value: "Legal",
+        disabled: true,
+        children: [...setEnabled(arrays.legal)]
+    },
+    {
+        label: "Local",
+        value: "Local",
+        disabled: true,
+        children: [...setEnabled(arrays.local)]
+    },
+    {
+        label: "Media & Entertainment",
+        value: "Media & Entertainment",
+        disabled: true,
+        children: [...setEnabled(arrays.media)]
+    },
+    {
+        label: "Security",
+        value: "Security",
+        disabled: true,
+        children: [...setEnabled(arrays.security)]
+    },
+    {
+        label: "Social",
+        value: "Social",
+        disabled: true,
+        children: [...setEnabled(arrays.social)]
+    },
 ];
 
 const Button = ({onClick}) => {
@@ -35,7 +88,7 @@ const Button = ({onClick}) => {
 
 const Home = ({history}) => {
     const [industry, setIndustry] = useState(null);
-    const [sub, setSub] = useState('Biotechnology');
+    const [sub, setSub] = useState("Biotechnology");
 
     const sendRequest = token => {
         const subIndustry = encodeURI(sub);
