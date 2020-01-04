@@ -13,13 +13,7 @@ const MyLink = withRouter(({label, route, history, onClick}) => {
     );
 });
 
-const Header = () => {
-    const [token, setToken] = useState(null);
-
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        setToken(token);
-    });
+const Header = ({token, setToken}) => {
 
     return (
         <header className={classes.header}>

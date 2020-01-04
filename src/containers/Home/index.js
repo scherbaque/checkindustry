@@ -35,7 +35,7 @@ const Button = ({onClick}) => {
 
 const Home = ({history}) => {
     const [industry, setIndustry] = useState(null);
-    const [sub, setSub] = useState(null);
+    const [sub, setSub] = useState('Biotechnology');
 
     const sendRequest = token => {
         const subIndustry = encodeURI(sub);
