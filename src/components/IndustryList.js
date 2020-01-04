@@ -1,6 +1,8 @@
 import React from "react";
 import classes from "../classes.module.css";
-import {industries} from "../industries";
+// import {industries} from "../industries"; uncomment later
+
+const industries = []
 
 const IndustryList = ({industry, setIndustry}) => {
     return (

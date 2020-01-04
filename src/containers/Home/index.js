@@ -3,9 +3,27 @@ import classes from "../../classes.module.css";
 import MySelect from "../../components/MySelect";
 import IndustryList from "../../components/IndustryList";
 import {path} from "../../api/constants";
-import {bio} from "../../industries";
+import * as arrays from "../../industries";
 
-const data = bio;
+const data = [
+    // { #bug here
+    //    label: "Bio & Nano Technology",
+    //    value: 'Bio & Nano Technology',
+    //    disabled: true,
+    //    children:  [...arrays.bio]
+    // }
+    ...arrays.bio,
+    ...arrays.assets,
+    ...arrays.bio,
+    ...arrays.business,
+    ...arrays.family,
+    ...arrays.it,
+    ...arrays.legal,
+    ...arrays.local,
+    ...arrays.media,
+    ...arrays.security,
+    ...arrays.social
+];
 
 const Button = ({onClick}) => {
     return (
@@ -56,6 +74,8 @@ const Home = ({history}) => {
         setSub(node.label);
     };
 
+    console.log("data === === ", arrays);
+
     return (
         <div className={classes.home}>
             <div className={classes.half}>
@@ -67,21 +87,23 @@ const Home = ({history}) => {
                         are hundreds of industries in the tech world, and dozens
                         of new industries emerge every year. It’s hard to keep
                         track of all the changes.
-                            <br/><br/>
-                        This service offers you to check which industries are most frequently mentioned
-                        together with your industry. Please choose the industry
-                        from the dropdown menu to see 5 neighboring industries
-                        (from our database of 500+ categories).
+                        <br />
+                        <br />
+                        This service offers you to check which industries are
+                        most frequently mentioned together with your industry.
+                        Please choose the industry from the dropdown menu to see
+                        5 neighboring industries (from our database of 500+
+                        categories).
                     </p>
                 </div>
             </div>
             <div className={classes.half}>
                 <div className={classes.pickBlock}>
                     <h1 className={classes.titleMain}>Pick Your Industry</h1>
-                    <IndustryList
+                    {/* <IndustryList
                         industry={industry}
                         setIndustry={setIndustry}
-                    />
+                    /> */}
                     <div className={classes.selectContainer}>
                         <MySelect
                             onChange={handleChangeSelect}

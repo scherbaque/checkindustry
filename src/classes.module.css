@@ -112,8 +112,9 @@
 
 .pickBlock {
     composes: block;
-    align-self: flex-start;
-    margin-top: 20px;
+    /* align-self: flex-start; */
+    margin-bottom: 30px;
+    /* margin-top: 20px; */
 }
 
 .link {
