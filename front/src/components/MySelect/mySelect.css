@@ -1,0 +1,92 @@
+.suspended .node-label {
+    text-decoration: none !important;
+}
+
+.dropdown-content * {
+    cursor: pointer !important;
+}
+
+.dropdown-content {
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100% !important;
+    padding: 15px 30px !important;
+    box-sizing: border-box !important;
+}
+
+.react-dropdown-tree-select,
+.dropdown,
+.dropdown-trigger {
+    width: 480px !important;
+    margin: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+}
+
+/* .tag-item {} */
+
+.react-dropdown-tree-select .dropdown .dropdown-trigger.arrow.top:after,
+.react-dropdown-tree-select .dropdown .dropdown-trigger.arrow.bottom:after {
+    /* display: none !important; */
+    color: #a4a4a4 !important;
+    font-size: 10px !important;
+    float: right !important;
+    margin-top: 6px;
+    margin-right: 20px;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.06),
+        0px 8px 16px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+}
+
+.search {
+    display: none;
+    /* width: 100%; */
+}
+.tag {
+    width: 420px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+}
+
+.tag-remove {
+    display: none;
+}
+.node .fa {
+    font-size: 12px;
+    margin-left: 4px;
+    background: red !important;
+
+    cursor: pointer;
+}
+
+.node .fa-ban {
+    color: darkorange;
+}
+
+.radio-item {
+    display: none !important;
+}
+
+.toggle {
+    font-style: normal !important;
+    font-weight: 600 !important;
+    color: #c62938 !important;
+}
+
+.node {
+	/* font-size: 20px !important; */
+    display: flex !important;
+    align-items: center !important;
+}

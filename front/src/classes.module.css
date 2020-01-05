@@ -1,0 +1,250 @@
+.footer {
+    height: 50px;
+    width: 100%;
+    background: #4a4a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    height: 60px;
+    margin: 0px;
+    width: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 80px;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright {
+    font-size: 14px;
+    font-weight: 200;
+    color: #bababa;
+    text-align: center;
+}
+
+.headerTitle {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #313131;
+    text-align: center;
+}
+
+.mainTitle {
+    font-size: 28px;
+    color: #313131;
+    text-align: center;
+}
+
+.text {
+    font-size: 14px;
+    color: #313131;
+    /* text-align: center; */
+}
+
+.optionText {
+    color: #313131;
+    font-size: 16px;
+}
+
+.redButton {
+    composes: flex;
+    width: 180px;
+    cursor: pointer;
+    height: 48px;
+    background: #c62938;
+    border-radius: 4px;
+}
+
+.blueButton {
+    composes: redButton;
+    background: #29c6b8;
+}
+
+.buttonText {
+    font-size: 18px;
+    color: white;
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.block {
+    composes: flex;
+    width: 480px;
+    flex-direction: column;
+}
+
+.row {
+    composes: flex;
+    height: 65px;
+}
+
+.half {
+    composes: flex;
+    flex: 1;
+    height: 100%;
+}
+
+.home {
+    composes: flex;
+    width: 95%;
+    height: 100%;
+    flex-direction: row;
+    margin: 10px auto;
+}
+
+.pickBlock {
+    composes: block;
+    /* align-self: flex-start; */
+    margin-bottom: 30px;
+    /* margin-top: 20px; */
+}
+
+.link {
+    color: #696969;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    border: solid 1px #ddd;
+    text-align: center;
+    border-radius: 4px;
+    width: 86px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.selectContainer {
+    composes: flex;
+    margin: 15px 0 30px 0;
+}
+
+.industryList {
+    composes: flex;
+    flex-wrap: wrap;
+    height: 110px;
+    flex-direction: column;
+    margin: 10px 0;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+}
+
+.industry {
+    /* color: yellow; */
+    margin: 0;
+    cursor: pointer;
+    padding: 0;
+    color: #AFBAA1;
+    font-size: 12px;
+    text-align: center;
+}
+
+.industrySelected {
+    composes: industry;
+    color: pink;
+    /* font-size: 20px; */
+    /* margin: 16px 0; */
+}
+.link:hover {
+    color: #999;
+}
+
+.login {
+    composes: home;
+}
+
+.loginBlock {
+    composes: flex;
+    width: 420px;
+    height: 300px;
+    padding: 85px;
+    box-sizing: border-box;
+    flex-direction: column;
+    background: #ffffff;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1),
+        0px 16px 32px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+}
+
+.loginBox {
+    composes: flex;
+    margin-top: 10px;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.loginTitle {
+    color: white;
+    font-size: 18px;
+    top: 0px;
+    right: 10px;
+    position: absolute;
+}
+
+.matchCol {
+    composes: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 440px;
+}
+
+.match {
+    composes: block;
+    width: 580px;
+    margin: auto;
+}
+
+.doesItMatch {
+    color: #313131;
+    font-size: 18px;
+    /* margin: 10px 0 12px 0; */
+    justify-self: flex-end;
+    margin: 14px 0;
+    align-self: flex-end;
+}
+
+.switchRow {
+    composes: row;
+    box-sizing: border-box;
+    width: 400px;
+    justify-content: space-between;
+}
+
+.switchTitle {
+    color: #313131;
+    font-size: 18px;
+}
+
+.uncheckedIcon {
+    font-size: 14px;
+    color: white;
+    bottom: -7px;
+    position: absolute;
+}
+
+.checkedIcon {
+    composes: uncheckedIcon;
+    left: 20px;
+}
