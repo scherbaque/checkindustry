@@ -19,7 +19,7 @@ const Header = ({token, setToken}) => {
         <header className={classes.header}>
             <h2 className={classes.headerTitle}>Check your industry</h2>
             <div className={classes.row}>
-                <MyLink label={"Home"} route={"/"} />
+                {/* <MyLink label={"Home"} route={"/"} />
                 {!token ? (
                     <MyLink label={"Login"} route={"/login"} />
                 ) : (
@@ -30,7 +30,7 @@ const Header = ({token, setToken}) => {
                             setToken(null);
                         }}
                     />
-                )}
+                )} */}
             </div>
         </header>
     );

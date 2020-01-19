@@ -22,16 +22,15 @@ const Match = props => {
     const setPreference = () => {
         // For setting preference, make a put request to URL/api/v1/profile/preference. You need to just only pass search id which you will get in the response of request to URL/api/v1/profile/. In response /profile you need to get the last element of searches array and get searches._id of the element.
 
-        const token = localStorage.getItem("token");
-        if (!profile || !token) return null;
-        console.log(" profile ==== ", profile);
-        const id = profile.searches[profile.searches.length - 1]._id;
-        console.log("id === ", id);
+        // if (!profile) return null;
+        return ;
+        // console.log(" profile ==== ", profile);
+        // const id = profile.searches[profile.searches.length - 1]._id;
+        const id = 0;
         fetch(`${path}/api/v1/profile/preference`, {
             method: "PUT",
             headers: {
                 Accept: "application/json",
-                Authorization: "Bearer " + token,
                 "content-type": "application/json"
             },
             body: JSON.stringify({id})
@@ -44,12 +43,10 @@ const Match = props => {
     };
 
     const getProfile = () => {
-        const token = localStorage.getItem("token");
         fetch(`${path}/api/v1/profile/`, {
             method: "GET",
             headers: {
                 Accept: "application/json",
-                Authorization: "Bearer " + token
             }
         })
             .then(e => e.json())
@@ -62,7 +59,7 @@ const Match = props => {
     };
 
     useEffect(() => {
-        getProfile();
+        // getProfile();
     }, []);
 
     useEffect(() => {

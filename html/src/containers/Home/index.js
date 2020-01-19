@@ -75,7 +75,7 @@ const data = [
         value: "Social",
         disabled: true,
         children: [...setEnabled(arrays.social)]
-    },
+    }
 ];
 
 const Button = ({onClick}) => {
@@ -90,13 +90,12 @@ const Home = ({history}) => {
     const [industry, setIndustry] = useState(null);
     const [sub, setSub] = useState("Biotechnology");
 
-    const sendRequest = token => {
+    const sendRequest = () => {
         const subIndustry = encodeURI(sub);
         fetch(`${path}/api/v1/profile/industry/${subIndustry}`, {
             method: "GET",
             headers: {
-                Accept: "application/json",
-                Authorization: "Bearer " + token
+                Accept: "application/json"
             }
         })
             .then(e => e.json())
@@ -112,14 +111,7 @@ const Home = ({history}) => {
             .catch(error => console.log(error));
     };
     const handleRequest = () => {
-        const token = localStorage.getItem("token");
-
-        console.log("token ===", token);
-        if (token) {
-            sendRequest(token);
-        } else {
-            history.push("/login");
-        }
+        sendRequest();
     };
 
     const handleChangeSelect = node => {

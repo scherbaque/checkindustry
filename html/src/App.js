@@ -22,7 +22,7 @@ const Navigator = () => {
             <Header token={token} setToken={setToken}></Header>
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/login" component={Login} />
+                {/* <Route path="/login" component={Login} /> */}
                 <Route path="/match" component={Match} />
                 <Route
                     render={() => <div>Sorry, this page does not exist. </div>}
